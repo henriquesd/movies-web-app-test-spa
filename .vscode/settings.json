@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/19337ae7-6420-4450-b6cf-58a14cf455b1/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/MoviesWebApp-SPA",
+    "appService.deploySubpath": ""
+}

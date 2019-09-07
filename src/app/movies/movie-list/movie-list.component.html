@@ -1,0 +1,43 @@
+<div class="jumbtron">
+  <h1 class="text-center text-primary title-page">Upcoming Movies</h1>
+  
+  <!-- text-left text-primary title-page -->
+
+  <div class="col-md-12">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+              <i class="fas fa-search"></i>
+          </div>
+        </div>
+        <input type="text" class="search-field" [(ngModel)]="searchTerm" (ngModelChange)="search()" placeholder="Search"/>
+      </div>
+    </div>
+      
+    <table class="table table-condensed table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+            <th>Title</th>
+            <th>Overview</th>
+            <th>Release Date</th>
+            <th style="text-align: center">Poster</th>
+            <th style="text-align: center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let movie of movies | paginate: { itemsPerPage: 20, currentPage: actualPage, totalItems: totalResults }">
+            <td>{{movie.title}}</td>
+            <td style="max-width: 350px">{{movie.overview.length > 350 ? (movie.overview | slice : 0:350) + '...' : movie.overview}}</td>
+            <td style="min-width: 132px">{{movie.release_date | date: 'mediumDate'}}</td>
+            <td style="max-width: 160px; text-align: center"><img src="{{ movie.poster_path }}" title="{{ movie.title }}" style="width: 70px; height: 100px"></td>
+            <td class="action-button-column text-center">
+                <button class="btn btn-primary btn-plus" type="button" (click)="details(movie.id)"><i class="fas fa-plus"></i></button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    <pagination-controls class="pagination justify-content-center" (pageChange)="pageChange($event)" previousLabel="Previous" nextLabel="Next"></pagination-controls>
+  </div>
+</div>
+  

@@ -1,0 +1,27 @@
+ <div class="jumbtron">
+    <div class="col-md-12 form-row info-movie">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <h2 class="text-left text-primary title-page">{{movie?.title}}</h2>
+            <div class="form-group">
+                <label class="title">Overview:</label>
+                <label>{{movie?.overview}}</label>
+            </div>
+            <div class="form-group">
+                <label class="title">Release Date:</label>
+                <label>{{movie?.release_date | date: 'mediumDate'}}</label>
+            </div>
+            <div class="form-group">
+                <label class="title">Genre:</label>
+                <label>{{movie?.genre}}</label>
+            </div>
+            <div class="form-group text-left">
+                <button class="btn btn-primary btn-back" type="button" (click)="back()">Back</button>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <img src="{{ movie?.poster_path }}" title="{{ movie?.title }}" style="width: 320px; height: 470px"/>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

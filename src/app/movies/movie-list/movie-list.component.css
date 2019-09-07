@@ -1,0 +1,24 @@
+.jumbtron {
+    padding-top: 60px;
+}
+
+.title-page {
+    margin-top: 10px;
+}
+
+.pagination /deep/ .ngx-pagination .current {
+    border: 1px solid #ddd;
+    margin-top: 15px;
+}
+
+.ico {
+    margin-top: 40px;
+}
+
+.btn-plus {
+    margin-top: 30px;
+}
+
+.search-field {
+    width: 300px;
+}
